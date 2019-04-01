@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+    <head lang="en-us">
+        <meta charset="UTF-8">
+        
+        <title>Crystal Game</title>
+        
+        <link rel="stylesheet" type="text/css" src="assets/css/reset.css">
+        <link rel="stylesheet" type="text/css" href=https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css>
+        <link rel="stylesheet" type="text/css" src="assets/css/style.css">
+        
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript" src="assets/javascript/game.js"></script>
+    </head>
+
+    <body>
+        <h1>Crystals Collector!</h1>
+            <div>
+                <p>You will be given a random number at the start of the game.</p>
+                <p>There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.</p>
+                <p>You win the game by matching your total score to a random number, you lose the game if your total score goes above the random number.</p>
+                <p>The value of each crystal is hidden from you until you click on it.</p>
+                <p>Each time when the game starts, the game will change the values of each crystal.</p>
+            </div>
+
+            <div id="targetScore"></div>
+            
+            <div>
+                <div>Wins: <div id="wins"></div></div>
+                <div>Losses: <div id="losses"></div></div>
+            </div>
+
+            <div>
+                <div id="crystal1"><img src="https://www.fascinatingdiamonds.com/blog/wp-content/uploads/2017/01/HEART-CUT-1.jpg"></div>
+                <div id="crystal2"><img src="http://www.golddefinitions.com/cms/jewelry-information/gemstones/ruby-image.jpg"></div>
+                <div id="crystal3"><img src="https://www.ringspo.com/wp-content/uploads/2015/06/hydro-emerald-round.png"></div>
+                <div id="crystal4"><img src="https://i2.wp.com/dalerobertsonjewelry.com/wp-content/uploads/2013/09/sapphire.jpg"></div>
+            </div>
+
+            <h3>Your total crystal score is:</h3>
+
+            <div id="crystalScore"></div>
+
+            </body>
