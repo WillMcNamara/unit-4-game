@@ -44,13 +44,26 @@ $(document).ready(function() {
         $("#score").text(0);
         randValue();
         randCrystals();
-        console.log(crystal1);
+        console.log(value);
     }
 
     //adding crystal value to score
     function add(crystal) {
         score = score + crystal;
         console.log(score);
+        console.log(value);
+    
+        //assign win/loss when conditions met
+        if (score === value) {
+            wins++;
+            alert("You Won!");
+            reset();
+        }
+        if (score > value) {
+            losses++;
+            alert("You Lost!");
+            reset();
+        }
     }
 
     //start game function
@@ -66,6 +79,7 @@ $(document).ready(function() {
         start();
     };
 
+    //make crystal buttons work
     $("#crystal1").on("click", function() {
         add(crystal1);
     });
