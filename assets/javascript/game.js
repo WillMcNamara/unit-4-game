@@ -44,6 +44,8 @@ $(document).ready(function() {
         $("#score").text(0);
         randValue();
         randCrystals();
+        $("#wins").text(wins);
+        $("#losses").text(losses);
         console.log(value);
     }
 
@@ -52,6 +54,8 @@ $(document).ready(function() {
         score = score + crystal;
         console.log(score);
         console.log(value);
+        $("#targetScore").text(value);
+        $("#crystalScore").text(score);
     
         //assign win/loss when conditions met
         if (score === value) {
