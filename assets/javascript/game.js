@@ -11,31 +11,78 @@
 
 //need game reset function, random crystal value function, random score function
 
-var value = 0;
-var crystal1 = 0;
-var crystal2 = 0;
-var crystal3 = 0;
-var crystal4 = 0;
-var score = 0;
-var wins = 0;
-var losses = 0;
+// wait until page loaded to run JS
+$(document).ready(function() {
+  
+//establish variables
+    var value = 0;
+    var crystal1 = 0;
+    var crystal2 = 0;
+    var crystal3 = 0;
+    var crystal4 = 0;
+    var score = 0;
+    var wins = 0;
+    var losses = 0;
+    var started = false;
 
-function randValue() {
-    value = Math.floor(Math.random()*25 + 50)
-}
+    //random goal value
+    function randValue() {
+        value = Math.floor(Math.random()*101 + 19)
+    }
 
-function randCrystal(crystal) {
-    crystal = Math.floor(Math.random()*10 + 1)
-}
+    //random crystal values
+    function randCrystals() {
+        crystal1 = Math.floor(Math.random()*11 + 1);
+        crystal2 = Math.floor(Math.random()*11 + 1);
+        crystal3 = Math.floor(Math.random()*11 + 1);
+        crystal4 = Math.floor(Math.random()*11 + 1);
+    }
 
-function reset() {
-    score = 0;
-    $("#score").text(0);
-    randValue();
-    randCrystal(crystal1);
-    randCrystal(crystal2);
-    randCrystal(crystal3);
-    randCrystal(crystal4);
-}
+    //reset game
+    function reset() {
+        score = 0;
+        $("#score").text(0);
+        randValue();
+        randCrystals();
+        console.log(crystal1);
+    }
+
+    //adding crystal value to score
+    function add(crystal) {
+        score = score + crystal;
+        console.log(score);
+    }
+
+    //start game function
+    function start() {
+        if (started === false) {
+        started = true;
+        reset();
+        }
+    }
+
+    //press any key to start game
+    document.onkeydown = function() {
+        start();
+    };
+
+    $("#crystal1").on("click", function() {
+        add(crystal1);
+    });
+
+    $("#crystal2").on("click", function() {
+        add(crystal2);
+    });
+
+    $("#crystal3").on("click", function() {
+        add(crystal3);
+    });
+
+    $("#crystal4").on("click", function() {
+        add(crystal4);
+    })
+});
+
+
 
 
