@@ -28,6 +28,7 @@ $(document).ready(function() {
     //random goal value
     function randValue() {
         value = Math.floor(Math.random()*101 + 19)
+        $("#targetScore").text(value);
     }
 
     //random crystal values
@@ -41,7 +42,7 @@ $(document).ready(function() {
     //reset game
     function reset() {
         score = 0;
-        $("#score").text(0);
+        $("#crystalScore").text("");
         randValue();
         randCrystals();
         $("#wins").text(wins);
@@ -54,7 +55,6 @@ $(document).ready(function() {
         score = score + crystal;
         console.log(score);
         console.log(value);
-        $("#targetScore").text(value);
         $("#crystalScore").text(score);
     
         //assign win/loss when conditions met
@@ -84,23 +84,31 @@ $(document).ready(function() {
     };
 
     //make crystal buttons work
+    
     $("#crystal1").on("click", function() {
+        if (started === true) {
         add(crystal1);
+        }
     });
 
     $("#crystal2").on("click", function() {
-        add(crystal2);
+        if (started === true) {
+            add(crystal2);
+        }
     });
 
     $("#crystal3").on("click", function() {
-        add(crystal3);
+        if (started === true) {
+            add(crystal3);
+        }
     });
 
+
     $("#crystal4").on("click", function() {
-        add(crystal4);
-    })
+        if (started === true) {
+            add(crystal4);
+        }
+    });
+
+
 });
-
-
-
-
